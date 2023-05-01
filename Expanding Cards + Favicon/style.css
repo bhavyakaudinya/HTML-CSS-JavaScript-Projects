@@ -1,22 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
+/* 👇🏻 box-sizing property allows us to include the padding and border in an element's total width and height */
+/* 👇🏻 'border-box' extends the height and width of an element to the border edges */
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: 'Muli', sans-serif;
+  
+  /* 👇🏻 Flexbox is a layout model that helps align one directional items */
   display: flex;
+  /* 👆🏻 we make the body element a flex container allowing us to adjust the layout of the div which is now a flex item */
+
   align-items: center;
+
+  /* 👇🏻 'justify-content' allows us to position items along the main axis of the flex container, and this main axis depends on the flex-direction. */
   justify-content: center;
-  height: 100vh;
+  /* 👆🏻 to center out item horizontally*/
+
+  height: 100vh; /* #vertical height */
+
+  /* 👇🏻 "Overflow" property specifies what should happen if content overflows an element's box. */
   overflow: hidden;
+  /* 👆🏻 'hidden' refers that the overflow is clipped and the rest of the content will be invisible.*/
+
   margin: 0;
 }
-/* here we are applying CSS on the "container" class in DIV tags*/
+
+
 .container {
   display: flex;
-  width: 90vw;
+  width: 90vw; /* #vertical width */
 }
 
 .panel {
@@ -32,6 +47,7 @@ body {
   position: relative;
 }
 
+/* 👇🏻 This CSS applies only on heading of each panel */
 .panel h3 {
   font-size: 24px;
   position: absolute;
@@ -41,13 +57,18 @@ body {
   opacity: 0;
 }
 
+/* 👇🏻 this applies on when the panel is active */
 .panel.active {
   flex: 5;
+  /* 👆🏻 'flex' sets how a flex item will grow pr shink to fit the space available in its flex container */
 }
 
+/* 👇🏻 The heading of active panel will get a transition */
 .panel.active h3 {
   opacity: 1;
+
   transition: opacity 0.3s ease-in 0.4s;
+  /* 'ease in' is value for a transition-timming-function which specifies a transition effect with a slow start */
 }
 
 @media (max-width: 480px) {
@@ -59,3 +80,4 @@ body {
   .panel:nth-of-type(5) {
     display: none;
   }
+}
