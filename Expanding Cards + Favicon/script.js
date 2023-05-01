@@ -1,3 +1,4 @@
+// This is logic part behind the working of expanding cards
 const panels = document.querySelectorAll('.panel')
 
 panels.forEach(panel => {
